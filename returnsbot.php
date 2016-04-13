@@ -58,6 +58,10 @@ class TelegramMessage
 
     public function output()
     {
+        if(empty($this->chat_id) || empty($this->message)) {
+            return;
+        }
+        
         $this->checkingData();
         file_get_contents(self::API_URL . self::BOT_TOKEN . '/sendMessage?chat_id=' . $this->chat_id .'&text=' . $this->message);
     }
