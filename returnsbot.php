@@ -58,7 +58,7 @@ class TelegramMessage
 
     public function output()
     {
-        if(empty($this->chat_id) || empty($this->message)) {
+        if(empty($this->chat_id) && empty($this->message)) {
             return;
         }
         
